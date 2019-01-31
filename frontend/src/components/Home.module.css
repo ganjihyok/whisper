@@ -1,0 +1,97 @@
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInDelay {
+    0% {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+body {
+  margin: unset;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+  grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+  grid-column: 1 / 21;
+  grid-row: 1 / 21;
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SXiEuoRjisu3q8c5/halloween-night-dark-blue-with-yellow-rays-animated-letters-appearing-on-black-background-3d-render_raklr3_c_thumbnail-full01.png");
+  background-size: cover;
+}
+
+.accountBtn {
+  grid-column: 20;
+  grid-row: 1;
+  margin: 30% auto auto auto;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.findBtn {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 30% auto auto auto;
+  font-size: 2rem;
+  color: white;
+}
+
+.logo {
+  z-index: 1;
+  grid-row: 8;
+  grid-column: 5 / 17;
+  text-align: center;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  animation: ease-out;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  transition: all 1s;
+}
+
+.welcomeMsg {
+  grid-row: 6;
+  grid-column: 5 / 17;
+  font-size: 6vw;
+  text-align: center;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  animation: ease-out;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  transition: all 1s;
+}
+
+.username {
+  display: inline-block;
+  color: #9e9fe0;
+  font-weight: 700;
+}
+
+.postListBtn {
+  grid-column: 9 / 13;
+  grid-row: 20;
+  color: white;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  text-decoration: unset;
+}
+
+.postBtn {
+  width: 50%;
+}
+
+.postBtnWrapper {
+  grid-column: 8 / 14;
+  grid-row: 11;
+  text-align: center;
+  animation: ease-out;
+  animation-name: fadeInDelay;
+  animation-duration: 2.2s;
+}

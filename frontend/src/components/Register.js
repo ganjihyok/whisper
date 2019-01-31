@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { registerUser, loginUser } from '../actions/authentication';
-import classnames from 'classnames';
+import style from './Register.module.css';
 
 class Register extends Component {
 
@@ -69,42 +69,36 @@ class Register extends Component {
     render() {
         const { username, password, errors } = this.state;
         return(
-        <div className="container" style={{ width: '20%'}}>
-            <form>
-                <div className="form-group">
+        <div className={style.registerModule}>
+            <form className={style.fieldForm}>
+                <div className={style.username}>
                     <input
                     type="text"
                     placeholder="Username"
-                    className={classnames('form-control form-control-lg', {
-                        'is-invalid': errors.username
-                    })}
+                    className={style.inputField}
                     name="username"
                     onChange={ this.handleInputChange }
                     value={ username }
                     />
-                    {errors.name && (<div className="invalid-feedback">{errors.username}</div>)}
+                    {errors.name && (<div className={style.usernameErr}>{errors.username}</div>)}
                 </div>
-                <div className="form-group">
+                <div className={style.password}>
                     <input
                     type="password"
                     placeholder="Password"
-                    className={classnames('form-control form-control-lg', {
-                        'is-invalid': errors.password
-                    })}
+                    className={style.inputField}
                     name="password"
                     onChange={ this.handleInputChange }
                     value={ password }
                     />
-                    {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+                    {errors.password && (<div className={style.passwordErr}>{errors.password}</div>)}
                 </div>
-                <div className="form-group">
-                    <button type="button" className="btn btn-primary" onClick={this.handleLogin}>
-                        Sign in
-                    </button>
-                    <button type="button" className="btn btn-primary" onClick={this.handleSignup}>
-                        Sign up
-                    </button>
-                </div>
+                <button type="button" className={style.signinBtn} onClick={this.handleLogin}>
+                    Sign in
+                </button>
+                <button type="button" className={style.signupBtn} onClick={this.handleSignup}>
+                    Sign up
+                </button>
             </form>
         </div>
         )

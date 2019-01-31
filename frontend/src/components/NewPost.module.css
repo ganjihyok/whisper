@@ -1,0 +1,18 @@
+.postTextArea {
+  width: 80%;
+  padding: 5%;
+  background-color: rgba(228,228,228, 0.3);
+  border: none;
+  border-radius: 25px;
+  color: white;
+}
+
+.submitBtn {
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: azure;
+  cursor: pointer;
+  padding: 2%;
+  font-weight: 700;
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const UserRouter = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -8,7 +8,8 @@ const validateLoginInput = require('../validation/login');
 
 const User = require('../models/User');
 
-router.post('/register', function(req, res) {
+UserRouter.post('/register', function(req, res) {
+    console.log(req.body)
 
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -49,7 +50,7 @@ router.post('/register', function(req, res) {
     });
 });
 
-router.post('/login', (req, res) => {
+UserRouter.post('/login', (req, res) => {
 
     const { errors, isValid } = validateLoginInput(req.body);
 
@@ -93,11 +94,11 @@ router.post('/login', (req, res) => {
         });
 });
 
-router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) => {
+UserRouter.get('/me', passport.authenticate('jwt', { session: false }), (req, res) => {
     return res.json({
         id: req.user.id,
         username: req.user.username,
     });
 });
 
-module.exports = router;
+module.exports = UserRouter;

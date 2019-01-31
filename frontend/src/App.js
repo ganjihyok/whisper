@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import jwt_decode from 'jwt-decode';
@@ -9,8 +9,8 @@ import { setCurrentUser, logoutUser } from './actions/authentication';
 import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Home from './components/Home';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import PostList from './components/PostList';
+import style from './App.module.css';
 
 if(localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
@@ -29,10 +29,11 @@ class App extends Component {
     return (
       <Provider store = { store }>
         <Router>
-            <div>
+            <div className={style.app}>
               <Navbar />
-                <Route exact path="/" component={ Home } />
+                <Route path="/" component={ Home } />
                 <Route exact path="/register" component={ Register } />
+                <Route exact path="/posts" component={ PostList } />
             </div>
           </Router>
         </Provider>

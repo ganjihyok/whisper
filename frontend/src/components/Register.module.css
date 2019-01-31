@@ -1,0 +1,49 @@
+.registerModule {
+  grid-column: 13 / 19;
+  grid-row: 2;
+  z-index: 1;
+}
+
+.username {
+  grid-column: 1;
+}
+
+.password {
+  grid-column: 3;
+}
+
+.fieldForm {
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 14% 2% 14%;
+  line-height: 2.5;
+}
+
+.inputField {
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
+  color: #eef0f3;
+  font-size: 80%;
+  padding: 5%;
+  background-color: rgba(228,228,228, 0.3);
+}
+
+.signinBtn {
+  grid-column: 5;
+  padding: 1%;
+  border: none;
+  background-color: #47496a;
+  color: #eef0f3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signupBtn {
+  grid-column: 7;
+  padding: 1%;
+  border: none;
+  background-color: #6777bc;
+  color: #eef0f3;
+  border-radius: 5px;
+  cursor: pointer;
+}

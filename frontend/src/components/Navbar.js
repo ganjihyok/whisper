@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
+import style from './Navbar.module.css';
 
 class Navbar extends Component {
 
@@ -15,28 +16,18 @@ class Navbar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
-            <ul className="navbar-nav ml-auto">
-                <a href="#" className="nav-link" onClick={this.onLogout.bind(this)}>
-                    <img src={user.avatar} alt={user.name} title={user.name}
-                        className="rounded-circle"
-                        style={{ width: '25px', marginRight: '5px'}} />
-                            Logout
-                </a>
-            </ul>
+            <div className={style.logoutBtn} onClick={this.onLogout.bind(this)}>
+                <i className="fas fa-sign-out-alt" />
+            </div>
         )
-      const guestLinks = (
-        <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  <i className="fas fa-user fa-2x" />
-                </Link>
-            </li>
-        </ul>
-      )
+        const guestLinks = (
+            <Link className={style.accountBtn} to="/register">
+                <i className="fas fa-user fa-1x" />
+            </Link>
+        )
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to="/">Redux Node Auth</Link>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <nav className={style.nav}>
+                <div className={style.topRightBtn}>
                     {isAuthenticated ? authLinks : guestLinks}
                 </div>
             </nav>
